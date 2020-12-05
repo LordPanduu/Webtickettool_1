@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Globi-squad Tickets</title>
 </head>
 <body>
-      {% for post in posts %}
+      {% for ticket in tickets %}
+            <h1>{{ ticket.title }}</h1>
+            <p>by {{ ticket.author }} on {{ ticket.post_date }}</p>
+            <p>{{ ticket.content }}</p>
+
+      {% endfor %}
 </body>
 </html>
