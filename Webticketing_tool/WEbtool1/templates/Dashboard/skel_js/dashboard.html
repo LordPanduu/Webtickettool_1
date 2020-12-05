@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-      <title>Globi-tickets Dashboard</title>
+    <link ref="stylessheet" type="text/css" href="{% static 'Webtool/main.css' %}" link>
+
+
+    <title>Globi-tickets Dashboard</title>
 </head>
 <body>
       <header class="site-header">
@@ -59,20 +63,6 @@
       </div>
     </main>
 
-
-
-
-
-
-
-      <div class="contaier">
-            {% for ticket in tickets %}
-                  <h1>{{ ticket.title }}</h1>
-                  <p>by {{ ticket.author }} on {{ ticket.post_date }}</p>
-                  <p>{{ ticket.content }}</p>
-
-            {% endfor %}
-      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
