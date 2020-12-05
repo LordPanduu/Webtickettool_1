@@ -1,7 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
 <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,30 +38,36 @@
         </nav>
       </header>
 
-
       <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-            {% for ticket in tickets %}
-                  <h1>{{ ticket.title }}</h1>
-                  <p>by {{ ticket.author }} on {{ ticket.post_date }}</p>
-                  <p>{{ ticket.content }}</p>
-            {% endfor %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
+          <div class="row">
+            <div class="col-md-8">
+                {% for ticket in tickets %}
+                    <article class="media content-section">
+                      <div class="media-body">
+                        <div class="article-metadata">
+                          <a class="mr-2" href="#">{{ ticket.author }}</a>
+                          <small class="text-muted">{{ ticket.date_posted }}</small>
+                        </div>
+                        <h2><a class="article-title" href="#">{{ ticket.title }}</a></h2>
+                          <p> class="article-content">{{ ticket.content }}</p>
+                      </div>
+                    </article>
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+              <div class="content-section">
+                <h3>Our Sidebar</h3>
+                <p class='text-muted'>You can put any information here you'd like.
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Posts</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
     </main>
 
 
