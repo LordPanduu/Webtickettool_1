@@ -1,6 +1,7 @@
 from typing import Dict, List
 
 from django.shortcuts import render
+from django.views.generic import ListView
 from django.http import request, HttpResponse
 
 tickets = [
@@ -34,4 +35,5 @@ def dashboard(request):
     }
     return render(request, 'Dashboard/skel_js/dashboard.html', context)
 
-
+#class TicketListView(ListView):
+    model = Ticket
