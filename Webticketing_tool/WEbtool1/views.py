@@ -39,3 +39,4 @@ def dashboard(request):
 class TicketListView(ListView):
     model = Ticket
     template_name = "Dashboard/skel_js/dashboard.html"
+    context_object_name = "posts"
